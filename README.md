@@ -17,7 +17,7 @@
 5. The game ends when the player chooses to finish or when the ship is full.
 
 ## How To Start
-1. First you have to download ExtraWeight!.exe and ExtraWeight.pdb.
+1. First download ExtraWeight!.exe and ExtraWeight.pdb.
 2. Second put both of them in same file.
 3. Finally start ExtraWeight!.exe and enjoy it! 
 
