@@ -1,0 +1,134 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int Load = 0;
+int Capacity = 1000;
+int NewLoad = 0;
+
+
+void randomStartingLoad() {
+    srand(time(0));  
+    Load = rand() % 501;
+}
+
+
+void loadCargo(int weight) {
+    if (Load + weight <= Capacity) {
+        Load += weight;
+        cout << weight << " \ntons of cargo loaded.\n";
+    }
+    else {
+        cout << "Not enough space for " << weight << " tons.\n";
+    }
+}
+
+void showShipStatus() {
+    cout << "Current Load: " << Load << " tons\n";
+    cout << "Capacity Left: " << Capacity - Load << " tons\n";
+}
+
+void showMainMenu() {
+    randomStartingLoad();  
+    int playOrHowToPlay;
+
+    cout << "\nWelcome To Extra Weight!\nFor Play Press 1. \nFor How To Play Press 2: ";
+    cin >> playOrHowToPlay;
+
+    if (playOrHowToPlay == 1) {
+        cout << "\nGame Starting...\n\n\n";
+        cout << "                              ***                              \n";
+        cout << "                             **                                \n";
+        cout << "                            | |                                \n";
+        cout << "                  __________| |_____                           \n";
+        cout << "            _____/ [] [] | [] [] [] \\   Capacity:" << Capacity << endl;
+        cout << "   _______/_____|________|___________\\_________               \n";
+        cout << "  \\                                           /               \n";
+        cout << "   \\_________________________________________/                \n";
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  \n";
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  \n";
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  \n\n\n\n";
+
+        while (true) {
+            showShipStatus();
+            cout << "Press 1 to load 25 tons\nPress 2 to load 50 tons\nPress 3 to load 75 tons\nPress 4 to load 100 tons\nPress 5 to finish and exit\nPress 0 to exit without finishing\n";
+            cin >> NewLoad;
+
+            if (NewLoad == 0) {
+                cout << "Game Over. You exited without finishing.\n";
+                break;
+            }
+            if (NewLoad == 5) {
+                cout << "\nCongratulations! You loaded a total of " << Load << " tons of cargo.\n\n";
+                break;
+            }
+
+            switch (NewLoad) {
+            case 1:
+                loadCargo(25);
+                break;
+            case 2:
+                loadCargo(50);
+                break;
+            case 3:
+                loadCargo(75);
+                break;
+            case 4:
+                loadCargo(100);
+                break;
+            default:
+                cout << "Invalid choice. Try again.\n";
+                break;
+            }
+        }
+    }
+    else if (playOrHowToPlay == 2) {
+        int howToPlayToMainMenu = 0;
+        cout << "\nInstructions:\n";
+        cout << "Your goal is to load as much cargo as possible without exceeding the ship's capacity.\n";
+        cout << "You can load 25, 50, 75, or 100 tons by pressing the corresponding number.\n";
+        cout << "Press 5 to finish the game and display your total load.\n";
+        cout << "Press 0 to stop loading and exit the game without finishing.\n";
+        cout << "For turn back to main menu press 1: ";
+        cin >> howToPlayToMainMenu;
+        if (howToPlayToMainMenu == 1) {
+            showMainMenu();
+        }
+        else
+        {
+            cout << "You entered wrong number please try again.";
+            
+        }
+    }
+    else {
+        cout << "Invalid Option. Returning to Main Menu...\n\n"; //ANA MENUYE NASIL GERİ DÖNÜCEĞİM??
+    }
+}
+
+
+
+int main() {
+#include <iostream>
+    using namespace std;
+
+    cout << "================================================================" << endl;
+    cout << "*********   *     *  **************  ********         *      " << endl;
+    cout << "*            *   *         *         *       *       * *     " << endl;
+    cout << "*             * *          *         *      *       *   *    " << endl;
+    cout << "*********      *           *         *******       *     *   " << endl;
+    cout << "*             * *          *         *     *      *********  " << endl;
+    cout << "*            *   *         *         *      *    *         * " << endl;
+    cout << "*********   *     *        *         *       *  *           *" << endl << endl;   
+    cout << "*           *   *********  *******  *         *  ************** " << endl;
+    cout << "  *      *      *             *     *         *        *        " << endl;
+    cout << " *         *    *             *     *         *        *        " << endl;
+    cout << "   *  *  *      *********     *     ***********        *        " << endl;
+    cout << "   *  *  *      *             *     *         *        *        " << endl;
+    cout << "   * * * *      *             *     *         *        *        " << endl;
+    cout << "    *   *       *********  *******  *         *        *        " << endl;
+    cout << "================================================================" << endl;
+  
+    showMainMenu();
+    return 0;
+}
