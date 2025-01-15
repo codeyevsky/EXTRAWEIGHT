@@ -14,5 +14,10 @@
 2. The player chooses from available cargo weights to load (25, 50, 75, or 100 tons).  
 3. The ship's current load and remaining capacity are displayed after each action.  
 4. Players aim to fill the ship as much as possible without exceeding its total capacity of 1000 tons.  
-5. The game ends when the player chooses to finish or when the ship is full.  
+5. The game ends when the player chooses to finish or when the ship is full.
+
+## How To Start
+1. First you have to download ExtraWeight!.exe and ExtraWeight.pdb.
+2. Second put both of them in same file.
+3. Finally start ExtraWeight!.exe and enjoy it! 
 
